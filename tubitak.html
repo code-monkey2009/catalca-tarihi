@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Çatalca'nın Tarihi Mirasları</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f5f5f7;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+/* GENEL */
+.container {
+    padding: 20px;
+}
+
+/* KART */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.card h2 {
+    margin: 0;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card.active .content {
+    max-height: 500px;
+}
+
+.images {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.images img {
+    width: 48%;
+    border-radius: 12px;
+}
+
+/* HARİTA */
+.map {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/* HAKKINDA */
+.about {
+    padding: 20px;
+    text-align: center;
+    color: #555;
+}
+
+
+
+/* SLIDER AYARLARI */
+.slider {
+  overflow-x: auto;          /* Yatay kaydırma aktif */
+  scroll-behavior: smooth;   /* Yumuşak kaydırma */
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.slides img {
+  height: 150px;            /* Yükseklik */
+  border-radius: 12px;
+  flex-shrink: 0;            /* Küçülmesini engelle */
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div><b>Çatalca</b></div>
+    <div class="menu">
+        <a href="#">Ana Sayfa</a>
+        <a href="#places">Tarihi Yerler</a>
+        <a href="#map">Harita</a>
+        <a href="#about">Hakkında</a>
+    </div>
+</div>
+
+<!-- TARİHİ YERLER -->
+<div id="places" class="container">
+
+<div class="card" onclick="toggle(this)">
+<h2>İnceğiz Mağaraları</h2>
+<div class="content">
+<p>İnceğiz Mağaraları, kayaların oyulmasıyla oluşturulmuş ve kökeni Bizans dönemine kadar uzanan önemli bir tarihi yerleşim alanıdır. Bu mağaralar geçmişte keşişler ve din adamları tarafından barınma ve ibadet amacıyla kullanılmıştır. İçlerinde odalar, ibadet alanları ve yaşam izleri bulunur.
+
+Doğayla iç içe konumu sayesinde hem tarihi hem de görsel açıdan dikkat çeken bu yapı, Çatalca’nın en etkileyici miraslarından biridir. Günümüzde ziyaretçilerin ilgisini çeken mağaralar, geçmiş yaşam biçimini yakından hissettiren nadir yerlerden biridir.</p>
+
+<button onclick="speak(this)">🔊 Dinle</button>
+
+<div class="images slider">
+  <div class="slides">
+<img src="inceğiz magrası/mağara1.png">
+<img src="inceğiz magrası/mağara2.jpeg">
+<img src="inceğiz magrası/mağara3.jpeg">
+<img src="inceğiz magrası/mağara4.jpeg">
+</div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<h2>Ali Paşa Camii</h2>
+<div class="content">
+<p>Ali Paşa Camii, Osmanlı dönemine ait olup klasik Türk-İslam mimarisinin sade ve zarif örneklerinden biridir. Yapımında kullanılan taş işçiliği ve dengeli yapısı, dönemin estetik anlayışını yansıtır.
+
+Cami, yalnızca bir ibadet yeri değil, aynı zamanda geçmişte sosyal hayatın merkezlerinden biri olmuştur. Günümüzde de kullanılmaya devam eden bu yapı, tarihi dokusunu koruyarak Çatalca’nın kültürel kimliğinin önemli bir parçası olmayı sürdürmektedir.</p>
+
+<button onclick="speak(this)">🔊 Dinle</button>
+
+<div class="images slider">
+  <div class="slides">
+<img src="ali paşa cami/camı1dıs.jpeg">
+<img src="ali paşa cami/camıturbe.jpeg">
+</div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<h2>Çatalca Tarihi Hamamı</h2>
+<div class="content">
+<p>Hamamönü, adını bölgede bulunan tarihi hamamdan alan ve geçmişte yerleşim açısından önemli bir nokta olan bir mahalledir. Osmanlı döneminden izler taşıyan bu bölge, geleneksel yaşamın sürdüğü alanlardan biri olarak bilinir.
+
+Dar sokakları, eski yapıları ve sakin atmosferiyle dikkat çeken Hamamönü, ziyaretçilere geçmişin izlerini hissettiren bir ortam sunar. Günümüzde modernleşmeye rağmen tarihî dokusunu kısmen koruyan bu bölge, Çatalca’nın kültürel mirasının önemli parçalarından biridir.</p>
+
+<button onclick="speak(this)">🔊 Dinle</button>
+
+<div class="images slider">
+  <div class="slides">
+<img src="hamamönu/hamam2.jpeg">
+<img src="hamamönu/hamam3ickubbe.jpeg">
+<img src="hamamönu/hamam4kapıic.jpeg">
+<img src="hamamönu/hamamdıskubbe.jpeg">
+<img src="hamamönu/hamamdıskubbe2.jpeg">
+<img src="hamamönu/hamammermer.jpeg">
+
+</div>
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+<h2>Ali Paşa Çeşmesi</h2>
+<div class="content">
+<p>Kesme taş mimarisiyle yapılan bu çeşme, Osmanlı döneminde halkın su ihtiyacını karşılamak için inşa edilmiştir.</p>
+
+<button onclick="speak(this)">🔊 Dinle</button>
+
+
+<div class="images slider">
+<div class="slides">
+<img src="ali paşa ceşmesi/cesme1.jpeg">
+<img src="ali paşa ceşmesi/cesme2.jpeg">
+<img src="ali paşa ceşmesi/cesme3.jpeg">
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+<!-- HARİTA -->
+<div id="map" class="map">
+<h2>Konumlar</h2>
+<p>
+<a href="https://maps.google.com" target="_blank">📍 İnceğiz Mağaraları Konum</a><br><br>
+<a href="https://maps.google.com" target="_blank">📍 Ali Paşa Camii Konum</a><br><br>
+<a href="https://maps.google.com" target="_blank">📍 Çatalca Hamamı Konum</a>
+</p>
+</div>
+
+<!-- HAKKINDA -->
+<div id="about" class="about">
+<p>Bu site, Çatalca'nın tarihi miraslarını tanıtmak amacıyla hazırlanmıştır.</p>
+</div>
+
+<script>
+ let speech = null;
+let activeCard = null;
+
+function speak(btn) {
+    const card = btn.parentElement;
+    const text = card.querySelector("p").innerText;
+
+    if (speech) {
+        window.speechSynthesis.cancel();
+        speech = null;
+        btn.innerText = "🔊 Dinle";
+        activeCard = null;
+        return;
+    }
+
+    const voices = window.speechSynthesis.getVoices();
+    let selectedVoice = voices.find(v => v.lang === "tr-TR") 
+                     || voices.find(v => v.lang.includes("tr")) 
+                     || voices[0];
+
+    speech = new SpeechSynthesisUtterance(text);
+    speech.voice = selectedVoice;
+    speech.lang = "tr-TR";
+    speech.rate = 0.9;
+    speech.pitch = 1;
+    speech.volume = 1;
+
+    // Kartı açık bırak ve slider ile birlikte
+    if (!card.classList.contains("active")) {
+        card.classList.add("active");
+    }
+    activeCard = card;
+
+    speech.onend = () => {
+        speech = null;
+        btn.innerText = "🔊 Dinle";
+        activeCard = null;
+    };
+
+    window.speechSynthesis.speak(speech);
+    btn.innerText = "⏹ Durdur";
+}
+
+
+function toggle(element) {
+    element.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
